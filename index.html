@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nguyễn Thanh Duy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div class="nav">
+          <a href="index.html" class="logo">
+            <img src="./img/logo.png" alt="Logo" />
+          </a>
+
+          <nav class="menu">
+            <a href="#trang-chu" class="active">Trang chủ</a>
+            <a href="#hoangdao">Cung hoàng đạo</a>
+            <a href="#danhba">Danh bạ ngẫu nhiên</a>
+            <a href="#curu">Đăng ký cư trú</a>
+            <a href="#thoitiet">Thời tiết</a>
+          </nav>
+        </div>
+      </header>
+
+      <section id="trang-chu" class="thongtin-banner">
+        <div class="thongtin-trai">
+          <div class="avatar-wrapper">
+            <img
+              class="student-avatar"
+              src="./img/avatar.png"
+              alt="avatar"
+            />
+          </div>
+          <div class="thongtin-chu">
+            <h2>Nguyễn Thanh Duy</h2>
+          </div>
+        </div>
+        <div class="thongtin-phai">
+          <div class="info-card">
+            <div class="info-icon bg-purple-light">
+              <span>🎓</span>
+            </div>
+            <div class="info-content">
+              <span class="info-label">MSSV</span>
+              <span class="info-value">082206015908</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon bg-purple-light">
+              <span>🏫</span>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Lớp</span>
+              <span class="info-value">Lập trình Web</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon bg-green-light">
+              <span>✉️</span>
+            </div>
+            <div class="info-content">
+              <span class="info-label">Email</span>
+              <span
+                class="info-value"
+                href="mailto:nguyenthanhduy.mhd@gmail.com"
+                >nguyenthanhduy.mhd@gmail.com</span
+              >
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="main-content-stack">
+        <!-- Bài 1: Cung hoàng đạo -->
+        <section class="app-card" id="hoangdao">
+          <div class="card-header">
+           <div class="card-header-badge">
+                <img src="./img/cunghoangdao.png" alt="icon" />
+            </div>
+            <div class="card-header-text">
+              <h2>Cung hoàng đạo</h2>
+              <p>
+                Nhập ngày, tháng, năm sinh để tra cứu Thiên Can - Địa Chi và
+                Cung Hoàng Đạo.
+              </p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="three-col-layout">
+              <div class="form-section">
+                <h3>Nhập thông tin ngày sinh</h3>
+                <div class="form-row-3">
+                  <div class="input-container">
+                    <input
+                      id="day"
+                      type="number"
+                      placeholder="Ngày"
+                      min="1"
+                      max="31"
+                    />
+                  </div>
+                  <div class="input-container">
+                    <input
+                      id="month"
+                      type="number"
+                      placeholder="Tháng"
+                      min="1"
+                      max="12"
+                    />
+                  </div>
+                  <div class="input-container">
+                    <input
+                      id="year"
+                      type="number"
+                      placeholder="Năm sinh"
+                      min="1"
+                    />
+                  </div>
+                </div>
+                <button onclick="traCuuCungHoangDao()">Tra cứu</button>
+                <div id="zodiacError" class="error-msg"></div>
+              </div>
+
+              <div class="result-section">
+                <h3>Kết quả</h3>
+                <div class="result-slots">
+                  <div class="result-slot">
+                    <div class="slot-text">
+                      <span class="slot-title"
+                        >Thiên Can - Địa Chi</span
+                      >
+                      <span class="slot-value" id="canChiVal">.......</span>
+                    </div>
+                  </div>
+                  <div class="result-slot">
+                    <div class="slot-text">
+                      <span class="slot-title">Cung Hoàng Đạo</span>
+                      <span class="slot-value" id="zodiacVal">.......</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="minhhoa-section">
+                <h3>Hình ảnh minh họa</h3>
+                <div class="minhhoa-row">
+                  <div class="minhhoa-item">
+                    <div class="minhhoa-image-circle">
+                      <img
+                        id="animalImg"
+                        src="./img/12congiap.png"
+                        alt="Thiên Can - Địa Chi"
+                      />
+                      <div id="elementBadge" class="element-badge" style="display: none;"></div>
+                    </div>
+                    <span class="minhhoa-label" id="animalLabel">Thiên Can - Địa Chi</span>
+                  </div>
+                  <div class="minhhoa-item">
+                    <div class="minhhoa-image-circle">
+                      <img
+                        id="zodiacImg"
+                        src="./img/cunghoangdao.png"
+                        alt="Cung hoàng đạo"
+                      />
+                    </div>
+                    <span class="minhhoa-label">Cung hoàng đạo</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bài 2: Random User Gallery -->
+        <section class="app-card" id="danhba">
+          <div class="card-header">
+            <div class="card-header-badge">
+              <span>
+               <img src="./img/random.png">
+              </span>
+            </div>
+            <div class="card-header-text">
+              <h2>Danh bạ người dùng ngẫu nhiên</h2>
+              <p>
+                Tải danh sách người dùng ngẫu nhiên từ API và hiển thị thông
+                tin.
+              </p>
+            </div>
+          </div>
+          <div class="card-body">
+            <button onclick="taoNguoiDungNgauNhien()" class="btn-inline">Tải danh bạ ngẫu nhiên</button>
+            <div id="userGallery" class="user-grid">
+              <div class="empty-gallery">
+                <div class="empty-state">
+                  <img src="./img/random.png" alt="Random User" class="empty-icon">
+                  <p>Danh bạ đang trống</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bài 3: Đăng ký cư trú -->
+        <section class="app-card" id="curu">
+          <div class="card-header">
+            <div class="card-header-badge">
+              <img src="./img/curu.png" alt="icon" />
+            </div>
+            <div class="card-header-text">
+              <h2>Đăng ký thông tin cư trú</h2>
+              <p>
+                Nhập thông tin cá nhân và chọn địa chỉ cư trú của công dân theo đơn vị hành chính mới.
+              </p>
+            </div>
+          </div>
+          <div class="card-body">
+            <form id="residentForm" class="two-col-layout-34">
+              <div class="form-section">
+                <h3>Thông tin cá nhân</h3>
+                <div class="input-container full-width">
+                  <input
+                    id="fullName"
+                    type="text"
+                    placeholder="Họ và tên công dân"
+                    required
+                  />
+                </div>
+                <div class="input-container full-width">
+                  <input
+                    id="idCard"
+                    type="text"
+                    placeholder="Số CMND / CCCD (12 số)"
+                    required
+                  />
+                </div>
+                <div class="input-container full-width">
+                  <input
+                    id="dob"
+                    type="text"
+                    placeholder="Ngày sinh (Ví dụ: 23/10/2006)"
+                    required
+                  />
+                </div>
+                <div class="input-container full-width">
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="Số điện thoại"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Địa chỉ cư trú</h3>
+                <div class="input-container full-width">
+                  <select id="province" required>
+                    <option value=""> Chọn Tỉnh / Thành phố </option>
+                  </select>
+                </div>
+                <div class="input-container full-width">
+                  <select id="ward" disabled required>
+                    <option value=""> Chọn Xã / Phường </option>
+                  </select>
+                </div>
+                <div class="input-container full-width">
+                  <input
+                    id="street"
+                    type="text"
+                    placeholder="Số nhà, tên đường, tổ/thôn"
+                    required
+                  />
+                </div>
+                <button type="submit">Đăng ký thông tin</button>
+              </div>
+            </form>
+
+            <!-- Bảng hiển thị thông tin đăng ký thành công -->
+            <div id="registrationResult" class="registration-result-card" style="display: none;">
+              <div class="result-header">
+                <span class="success-badge">Đăng ký thành công</span>
+                <h3>Thông tin công dân đã đăng ký</h3>
+              </div>
+              <div class="two-col-layout-34" style="margin-top: 16px;">
+                <div class="info-list">
+                  <div class="info-item"><b>Họ và tên:</b> <span id="resFullName">...</span></div>
+                  <div class="info-item"><b>Số CMND / CCCD:</b> <span id="resIdCard">...</span></div>
+                  <div class="info-item"><b>Ngày sinh:</b> <span id="resDob">...</span></div>
+                  <div class="info-item"><b>Số điện thoại:</b> <span id="resPhone">...</span></div>
+                </div>
+                <div class="info-list">
+                  <div class="info-item"><b>Tỉnh / Thành phố:</b> <span id="resProvince">...</span></div>
+                  <div class="info-item"><b>Xã / Phường:</b> <span id="resWard">...</span></div>
+                  <div class="info-item"><b>Số nhà, đường:</b> <span id="resStreet">...</span></div>
+                  <div class="info-item"><b>Thời gian đăng ký:</b> <span id="resTime">...</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Bài 4: Mini Weather App -->
+        <section class="app-card" id="thoitiet">
+          <div class="card-header">
+              <div class="card-header-badge">
+              <span>
+               <img src="./img/thoitiet.png">
+              </span>
+            </div>
+            <div class="card-header-text">
+              <h2>Thời tiết</h2>
+              <p>Nhập tên thành phố để xem thông tin thời tiết hiện tại.</p>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="two-col-layout-34">
+              <div class="form-section">
+                <h3>Nhập tên thành phố</h3>
+                <div class="input-container full-width">
+                  <input
+                    id="cityInput"
+                    type="text"
+                    placeholder="Ví dụ: Hanoi, Tokyo, London..."
+                  />
+                </div>
+                <button onclick="timKiemThoiTiet()">Xem thời tiết</button>
+                <div class="info-box bg-orange-light text-orange">
+                  <p>
+                    Nhập đúng tên thành phố. Ví Dụ Hanoi, Tokyo, London...
+                  </p>
+                </div>
+              </div>
+
+              <div class="result-section">
+                <h3>Kết quả thời tiết</h3>
+                <div class="result-border-box" id="weatherResult">
+                  <div class="empty-state">
+                    <img
+                      class="empty-icon"
+                      src="./img/thoitiet.png"
+                      alt="Thời tiết"
+                    />
+                    <p>
+                      Kết quả sẽ hiển thị ở đây
+                    </p>
+                    <p>
+                      Hãy nhập tên thành phố và xem thời tiết!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>Nguyễn Thanh Duy</p>
+        <a href="https://github.com/" target="_blank">Github</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+        <a href="https://www.facebook.com/" target="_blank">Facebook</a>
+      </div>
+      <button
+        class="scroll-to-top"
+        id="scrollTopBtn"
+        onclick="cuonLenDauTrang()"
+      >
+        <span>▲</span>
+      </button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
